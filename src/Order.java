@@ -15,7 +15,7 @@ public class Order {
    static int orderId;
     String date;
     String Address;
-    //int total;
+    int total;
     ArrayList<Product> ODR;
     
 public void setOrderId(int id){
@@ -30,6 +30,9 @@ public void setDate(String dt){
 public void setOrder(ArrayList<Product> PD){
     this.ODR=PD;
 }
+public void setTotal( int t){
+    this.total=t;
+}
 static int getOrderId(){
     return orderId++;
 }
@@ -41,6 +44,9 @@ public String getDate(){
 }
 public ArrayList getOrder(){
     return ODR;
+}
+public int getTotal(){
+    return total;
 }
 }
 

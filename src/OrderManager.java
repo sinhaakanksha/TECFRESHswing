@@ -49,13 +49,17 @@ public class OrderManager {
         }
     }
     public void Confirm() {
-        
+        int sum=0;
         Order or= new Order();
         or.setOrderId(id);
         id++;
         or.setAddress("dnaogjofpkdow");
         or.setDate("12.02.21");
         or.setOrder(OD);
+        for(int i=0;i<OD.size();i++){
+           sum=sum+OD.get(i).TotalGetter();
+        }
+        or.setTotal(sum);
         ORDER.add(or);
        
        
@@ -66,6 +70,7 @@ public class OrderManager {
             for(int j=0;j<OD.size();j++){
                 System.out.println(OD.get(j).NameGetter() + " " + OD.get(j).QuantityGetter() + " " + OD.get(j).PriceGetter() + " " + OD.get(j).TotalGetter());
             }
+            System.out.println(ORDER.get(i).getTotal());
         }
     }
     

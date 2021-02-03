@@ -5,8 +5,15 @@ import java.util.List;
 import java.util.ArrayList;
         
 public class SearchManager {
-    static List<Catalog> list= new ArrayList<>();
-    static List<Catalog> filterlist = new ArrayList<>();
+    static List<Catalog> list;
+    static List<Catalog> filterlist;
+    public SearchManager(){
+        init();
+    }
+    public void init(){
+        list= new ArrayList<>();
+        filterlist = new ArrayList<>();
+    }
     
     public void search(String query,List<Catalog> list){
         for(int i=0;i<list.size();i++){
