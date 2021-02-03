@@ -14,9 +14,17 @@ import java.util.ArrayList;
  * @author user
  */
 public class OrderManager {
-
-    private ArrayList<Product> OD = new ArrayList<>();
-    private ArrayList<Product> FO = new ArrayList<>();
+     static int id=1123;
+    private ArrayList<Product> OD;
+    private ArrayList<Order> ORDER;
+    public OrderManager(){
+        init();
+    }
+    public void init( ){
+        OD = new ArrayList<>();
+         ORDER = new ArrayList<>();
+         //id=1123;
+    }
 
     public void Add(String name, int quantity, int price) {
         Product po = new Product();
@@ -40,55 +48,44 @@ public class OrderManager {
             System.out.println(OD.get(i).NameGetter() + " " + OD.get(i).QuantityGetter() + " " + OD.get(i).PriceGetter() + " " + OD.get(i).TotalGetter());
         }
     }
-    public void Confirm() throws IOException{
-        /*int sum=0;
-        BufferedWriter bw= new BufferedWriter(new FileWriter("src/order.csv"));
-         bw.write("Product"+","+"Quantity"+","+"Price"+","+"TotalPrice");
-         bw.newLine();
-        for( int i=0;i<OD.size();i++){
-            bw.write(OD.get(i).NameGetter()+","+OD.get(i).QuantityGetter()+","+OD.get(i).PriceGetter()+","+OD.get(i).TotalGetter());
-            sum= sum +Integer.valueOf(OD.get(i).TotalGetter());
-            bw.newLine();
-        }
-        bw.write(",,,"+sum);
-        bw.flush();*/
-        for (int i = 0; i < OD.size(); i++){
-        Product p = new Product();
-        p.NameSetter(OD.get(i).NameGetter());
-        p.QuantitySetter(OD.get(i).QuantityGetter());
-        p.PriceSetter(OD.get(i).PriceGetter());
-        p.TotalSetter(OD.get(i).TotalGetter());
-        FO.add(p);
-        }
+    public void Confirm() {
+        
+        Order or= new Order();
+        or.setOrderId(id);
+        id++;
+        or.setAddress("dnaogjofpkdow");
+        or.setDate("12.02.21");
+        or.setOrder(OD);
+        ORDER.add(or);
+       
+       
     }
-    public void init( String name){
-        int temp=0;
-        for(int i=0;i<FO.size();i++){
-            if(FO.get(i).NameGetter().equals(name))
-            {
-                System.out.println("Element found in your order");
-                temp=1;
-                
+    public void Disp(){
+        for(int i=0;i<ORDER.size();i++){
+            System.out.println(ORDER.get(i).getOrderId()+" "+ORDER.get(i).getAddress()+" ");
+            for(int j=0;j<OD.size();j++){
+                System.out.println(OD.get(j).NameGetter() + " " + OD.get(j).QuantityGetter() + " " + OD.get(j).PriceGetter() + " " + OD.get(j).TotalGetter());
             }
-            
-        }
-        if(temp==0){
-         System.out.println("Element NOT present in your order");
         }
     }
+    
 
     public static void main(String[] args) throws IOException {
         OrderManager m = new OrderManager();
+        OrderManager m1 = new OrderManager();
         m.Add("Potato", 2, 30);
         m.Add("Tomato", 2, 120);
-        m.Add("Milk", 2, 50);
-        m.Add("Sope", 3, 150);
-        m.Add("Parle G", 1, 20);
-        m.Display();
+        m1.Add("Milk", 2, 50);
+        m1.Add("Sope", 3, 150);
+        m1.Add("Parle G", 1, 20);
+        //m.Display();
         //m.Delete("Sope");
        // m.Display();
        m.Confirm();
-       m.init("Tomato");
+       m.Disp(); 
+       m1.Confirm();
+       m1.Disp();
+       //m.init("Tomato");
 
     }
 
