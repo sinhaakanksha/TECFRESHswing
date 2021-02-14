@@ -12,11 +12,12 @@ import java.util.ArrayList;
  * @author user
  */
 public class Order {
-   static int orderId;
+  /* static*/ int orderId;
+   String Status;
     String date;
     String Address;
     int total;
-    ArrayList<Product> ODR;
+    ArrayList<Product> OD;
     
 public void setOrderId(int id){
     this.orderId=id;
@@ -28,13 +29,17 @@ public void setDate(String dt){
     this.date=dt;
 }
 public void setOrder(ArrayList<Product> PD){
-    this.ODR=PD;
+    this.OD=PD;
 }
 public void setTotal( int t){
     this.total=t;
 }
-static int getOrderId(){
+public int getOrderId(){
+    
     return orderId++;
+}
+public void setStatus(String s){
+    this.Status=s;
 }
 public String getAddress(){
     return Address;
@@ -43,10 +48,16 @@ public String getDate(){
     return date;
 }
 public ArrayList getOrder(){
-    return ODR;
+    return OD;
 }
 public int getTotal(){
     return total;
+}
+public String getID(){
+    return String.valueOf(orderId);
+}
+public String getStatus(){
+    return Status;
 }
 }
 

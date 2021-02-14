@@ -15,6 +15,8 @@ public class Catalog {
     int Price = 0;
     int totalPrice=0;
     int Quantity=0;
+    //int Stock;
+    //String ID=null;
     
     public void setName(String name){
         this.productName=name;
@@ -32,6 +34,12 @@ public class Catalog {
     public void setPrice(int pr){
         this.Price=pr;
     }
+     /*public void setStock(int st){
+        this.Stock=st;
+    }
+      public void setID(String id){
+        this.ID=id;
+    }*/
     
     public String getName(){
         return productName;
@@ -49,6 +57,12 @@ public class Catalog {
     public int getPrice(){
         return Price;
     }
+   /* public int getStock(){
+        return Stock;
+    }
+    public String getID(){
+        return ID;
+    }*/
     
     
 }

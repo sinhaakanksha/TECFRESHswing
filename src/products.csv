@@ -1,10 +1,10 @@
-Product Name,Product Price,Category,Discount
-Apple(per Kg),120,Fruits,10
-Orange(per Kg),70,Fruits,0
-Potato(per Kg),30,Vegetables,0
-Tomato(per Kg),60,Vegetables,5
-Milk(per L),50,Dairy,5
-Butter(per 500g),120,Dairy,10
-Atta(per 10kg),380,Grocery,25
-Mustard Oil(per L),120,Grocery,10
-Salt(per Kg),28,Grocery,0
+Product ID,Product Name,Product Price,Category,Discount,Stock
+F1,Apple(per Kg),120,Fruits,10,500
+F2,Orange(per Kg),70,Fruits,0,100
+V1,Potato(per Kg),30,Vegetables,0,200
+V2,Tomato(per Kg),60,Vegetables,5,100
+D1,Milk(per L),50,Dairy,5,1000
+D2,Butter(per 500g),120,Dairy,10,500
+G1,Atta(per 10kg),380,Grocery,25,1000
+G2,Mustard Oil(per L),120,Grocery,10,700
+G3,Salt(per Kg),28,Grocery,0,500
